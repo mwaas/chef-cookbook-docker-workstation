@@ -1,0 +1,204 @@
+---
+timestamp: 2016-11-27 22:51:30 UTC
+kitchen_version: 1.13.2
+plugins:
+  driver:
+    Docker:
+      class: Kitchen::Driver::Docker
+      version: 
+      api_version: 
+  provisioner:
+    ChefZero:
+      class: Kitchen::Provisioner::ChefZero
+      version: 1.13.2
+      api_version: 2
+  transport:
+    Ssh:
+      class: Kitchen::Transport::Ssh
+      version: 1.13.2
+      api_version: 1
+  verifier:
+    Busser:
+      class: Kitchen::Verifier::Busser
+      version: 1.13.2
+      api_version: 1
+loader:
+  process_erb: true
+  process_local: true
+  process_global: true
+  global_config: 
+  project_config:
+    filename: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/.kitchen.yml"
+    raw_data:
+      driver:
+        name: docker
+        provision_command: curl -L https://www.chef.io/chef/install.sh | bash
+      provisioner:
+        name: chef_zero
+      platforms:
+      - name: dockerfile
+        driver:
+          username: dockerfile
+          password: dockerfile
+          dockerfile: test/Dockerfile
+          run_command: "/sbin/init"
+      suites:
+      - name: default
+        run_list:
+        - recipe[kitchen-docker-workstation::default]
+        verifier:
+          inspec_tests:
+          - test/recipes
+        attributes: 
+  local_config: 
+  combined_config:
+    filename: 
+    raw_data:
+      driver:
+        name: docker
+        provision_command: curl -L https://www.chef.io/chef/install.sh | bash
+      provisioner:
+        name: chef_zero
+      platforms:
+      - name: dockerfile
+        driver:
+          username: dockerfile
+          password: dockerfile
+          dockerfile: test/Dockerfile
+          run_command: "/sbin/init"
+      suites:
+      - name: default
+        run_list:
+        - recipe[kitchen-docker-workstation::default]
+        verifier:
+          inspec_tests:
+          - test/recipes
+        attributes: 
+instances:
+  default-dockerfile:
+    platform:
+      os_type: unix
+      shell_type: bourne
+    state_file:
+      container_id: 67278113afeb72254c4e6aa764bd382c3f5814a545ec987649601c286c861c25
+      hostname: localhost
+      image_id: be14063a6672
+      last_action: create
+      port: 32768
+      ssh_key: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/.kitchen/docker_id_rsa"
+      username: dockerfile
+    driver:
+      binary: docker
+      build_context: true
+      build_options: 
+      cap_add: 
+      cap_drop: 
+      disable_upstart: true
+      dockerfile: test/Dockerfile
+      image: dockerfile
+      instance_name: defaultdockerfile-dpz64gs-dcwidavauto0143-83n491ii
+      kitchen_root: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation"
+      log_level: :info
+      name: docker
+      password: dockerfile
+      platform: dockerfile
+      private_key: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/.kitchen/docker_id_rsa"
+      privileged: false
+      provision_command: curl -L https://www.chef.io/chef/install.sh | bash
+      public_key: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/.kitchen/docker_id_rsa.pub"
+      publish_all: false
+      remove_images: false
+      run_command: "/sbin/init"
+      run_options: 
+      security_opt: 
+      socket: unix:///var/run/docker.sock
+      test_base_path: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/test/integration"
+      tls: false
+      tls_cacert: 
+      tls_cert: 
+      tls_key: 
+      tls_verify: false
+      use_cache: true
+      use_sudo: true
+      username: dockerfile
+      wait_for_sshd: true
+    provisioner:
+      always_update_cookbooks: false
+      attributes: {}
+      chef_client_path: "/bin/chef-client"
+      chef_omnibus_install_options: 
+      chef_omnibus_url: https://omnitruck.chef.io/install.sh
+      chef_zero_host: 
+      chef_zero_port: 8889
+      client_rb: {}
+      clients_path: 
+      command_prefix: 
+      config_path: 
+      cookbook_files_glob: README.*,metadata.{json,rb},attributes/**/*,definitions/**/*,files/**/*,libraries/**/*,providers/**/*,recipes/**/*,resources/**/*,templates/**/*
+      data_bags_path: 
+      data_path: 
+      encrypted_data_bag_secret_key_path: 
+      environments_path: 
+      ftp_proxy: 
+      http_proxy: 
+      https_proxy: 
+      json_attributes: true
+      kitchen_root: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation"
+      log_file: 
+      log_level: auto
+      max_retries: 1
+      name: chef_zero
+      named_run_list: {}
+      nodes_path: 
+      policyfile: 
+      policyfile_path: 
+      profile_ruby: false
+      require_chef_omnibus: true
+      retry_on_exit_code: []
+      roles_path: 
+      root_path: "/tmp/kitchen"
+      ruby_bindir: "/embedded/bin"
+      run_list:
+      - recipe[kitchen-docker-workstation::default]
+      sudo: true
+      sudo_command: sudo -E
+      test_base_path: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/test/integration"
+      wait_for_retry: 30
+    transport:
+      compression: false
+      compression_level: 0
+      connection_retries: 5
+      connection_retry_sleep: 1
+      connection_timeout: 15
+      keepalive: true
+      keepalive_interval: 60
+      kitchen_root: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation"
+      log_level: :info
+      max_ssh_sessions: 9
+      max_wait_until_ready: 600
+      name: ssh
+      port: 22
+      ssh_gateway: 
+      ssh_gateway_username: 
+      ssh_key: 
+      test_base_path: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/test/integration"
+      username: root
+    verifier:
+      busser_bin: "/tmp/verifier/bin/busser"
+      chef_omnibus_root: "/opt/chef"
+      command_prefix: 
+      ftp_proxy: 
+      http_proxy: 
+      https_proxy: 
+      inspec_tests:
+      - test/recipes
+      kitchen_root: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation"
+      log_level: :info
+      name: busser
+      root_path: "/tmp/verifier"
+      ruby_bindir: "/opt/chef/embedded/bin"
+      sudo: true
+      sudo_command: sudo -E
+      suite_name: default
+      test_base_path: "/home/dpz64gs/chef-repo/cookbooks/kitchen-docker-workstation/test/integration"
+      version: busser

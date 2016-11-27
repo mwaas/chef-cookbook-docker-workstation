@@ -1,6 +1,7 @@
 FROM centos:6
 
 ENV http_proxy 'http://quad3-proxy-vip.edc.nam.gm.com:8080'
+ENV https_proxy 'http://quad3-proxy-vip.edc.nam.gm.com:8080'
 
 RUN yum clean all
 RUN yum install -y sudo openssh-server openssh-clients which curl htop
