@@ -6,4 +6,5 @@
 #
 
 include_recipe 'kitchen-docker-workstation::setup'
+#include_recipe 'workstation2::setup'
 

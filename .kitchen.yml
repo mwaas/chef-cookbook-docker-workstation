@@ -8,6 +8,7 @@ driver:
 
 provisioner:
   name: chef_zero
+#  cookbook_path: /home/dpz64gs/chef-repo/cookbooks
 
 platforms:
 #- name: ubuntu-12.04
@@ -36,6 +37,7 @@ suites:
 #  excludes: [arch]
   run_list:
     - recipe[kitchen-docker-workstation::default]
+ #   - recipe[workstation2::setup]
   verifier:
     inspec_tests:
       - test/recipes
